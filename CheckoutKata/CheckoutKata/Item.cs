@@ -9,5 +9,7 @@ namespace CheckoutKata
         public string SKU { get; set; }
 
         public int Price { get; set; }
+
+        public ISpecialOffer SpecialOffer {get; set; }
     }
 }
