@@ -13,7 +13,7 @@ namespace CheckoutKata
             AddItem(new Item() { SKU = "A99", Price = 50 });
             AddItem(new Item() { SKU = "B15", Price = 30 });
             AddItem(new Item() { SKU = "C40", Price = 60 });
-            AddItem(new Item() { SKU = "T34", Price = 30 });
+            AddItem(new Item() { SKU = "T34", Price = 99 });
         }
 
         public Item GetItem(string sKU)
