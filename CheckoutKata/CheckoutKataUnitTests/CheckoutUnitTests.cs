@@ -10,7 +10,7 @@ namespace CheckoutKataUnitTests
 
         public CheckoutUnitTests()
         {
-            checkout = new Checkout();
+            checkout = new Checkout(new Store());
         }
 
         [Fact]
