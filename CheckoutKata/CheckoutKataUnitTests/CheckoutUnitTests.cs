@@ -73,6 +73,19 @@ namespace CheckoutKataUnitTests
         }
 
         [Fact]
+        public void Total_ScanT34AndA99_Return149()
+        {
+            var expected = 149;
+
+            checkout.Scan("T34");
+            checkout.Scan("A99");
+
+            var result = checkout.Total();
+
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
         public void Total_ScanThreeA99_Return130()
         {
             var expected = 130;
@@ -93,6 +106,38 @@ namespace CheckoutKataUnitTests
 
             checkout.Scan("B15");
             checkout.Scan("B15");
+
+            var result = checkout.Total();
+
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void Total_ScanFourB15_Return90()
+        {
+            var expected = 90;
+
+            checkout.Scan("B15");
+            checkout.Scan("B15");
+            checkout.Scan("B15");
+            checkout.Scan("B15");
+
+            var result = checkout.Total();
+
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void Total_ScanSixA99_Return260()
+        {
+            var expected = 260;
+
+            checkout.Scan("A99");
+            checkout.Scan("A99");
+            checkout.Scan("A99");
+            checkout.Scan("A99");
+            checkout.Scan("A99");
+            checkout.Scan("A99");
 
             var result = checkout.Total();
 

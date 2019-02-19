@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CheckoutKata
+﻿namespace CheckoutKata
 {
     public class MultiBuyOffer : ISpecialOffer
     {
@@ -17,7 +13,7 @@ namespace CheckoutKata
 
         public int Discount(int itemCount, int itemPrice)
         {
-            return 0;
+            return offerPrice;
         }
     }
 }

@@ -10,17 +10,17 @@ namespace CheckoutKata
 
         public Store()
         {
-            AddItem(new Item() { SKU = "A99", Price = 50 });
-            AddItem(new Item() { SKU = "B15", Price = 30 });
+            AddItem(new Item() { SKU = "A99", Price = 50, SpecialOffer = new MultiBuyOffer(3, 130) });
+            AddItem(new Item() { SKU = "B15", Price = 30, SpecialOffer = new MultiBuyOffer(2, 45) });
             AddItem(new Item() { SKU = "C40", Price = 60 });
             AddItem(new Item() { SKU = "T34", Price = 99 });
         }
 
-        public Item GetItem(string sKU)
+        public Item GetItem(string sku)
         {
             try
             {
-                return items[sKU];
+                return items[sku];
             }
             catch
             {

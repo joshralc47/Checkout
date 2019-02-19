@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CheckoutKata
 {
@@ -14,9 +12,9 @@ namespace CheckoutKata
             this.store = store;
         }
 
-        public void Scan(string sKU)
+        public void Scan(string sku)
         {
-            var item = store.GetItem(sKU);
+            var item = store.GetItem(sku);
 
             if(basket.ContainsKey(item))
             {
@@ -33,7 +31,14 @@ namespace CheckoutKata
 
             foreach(var item in basket)
             {
-                total += item.Key.Price * item.Value;
+                if(item.Key.SpecialOffer != null)
+                {
+                    total += item.Key.SpecialOffer.Discount(item.Value, item.Key.Price);
+                }
+                else
+                {
+                    total += item.Key.Price * item.Value;
+                }
             }
 
             return total;

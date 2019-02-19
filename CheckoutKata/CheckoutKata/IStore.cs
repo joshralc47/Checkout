@@ -7,6 +7,6 @@ namespace CheckoutKata
 {
     public interface IStore
     {
-        Item GetItem(string sKU);
+        Item GetItem(string sku);
     }
 }
