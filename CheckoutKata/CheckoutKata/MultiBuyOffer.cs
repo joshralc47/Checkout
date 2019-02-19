@@ -1,4 +1,6 @@
-﻿namespace CheckoutKata
+﻿using System;
+
+namespace CheckoutKata
 {
     public class MultiBuyOffer : ISpecialOffer
     {
@@ -13,7 +15,9 @@
 
         public int Discount(int itemCount, int itemPrice)
         {
-            return offerPrice;
-        }
+            var result = Math.DivRem(itemCount, numberOfItems, out int remainder);
+
+            return (remainder * itemPrice) + (result * offerPrice);
+        } 
     }
 }

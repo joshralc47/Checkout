@@ -18,7 +18,7 @@ namespace CheckoutKata
 
             if(basket.ContainsKey(item))
             {
-                basket[item] = +1;
+                basket[item] += 1;
             } else
             {
                 basket.Add(item, 1);
